@@ -1,0 +1,164 @@
+
+.timer-page {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  background: #f5f7fb;
+}
+
+.timer-card {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.timer-back {
+  display: block;
+  margin-bottom: 24px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #eaf1fc;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+.timer-card h2 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.timer-subtitle {
+  color: #64748b;
+  margin: 10px 0 24px;
+}
+
+.timer-modes {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.timer-modes button {
+  padding: 10px 14px;
+  border: 1px solid #dbe3ef;
+  border-radius: 20px;
+  background: white;
+  color: #475569;
+  cursor: pointer;
+}
+
+.timer-modes button.active {
+  border-color: #2573eb;
+  background: #2573eb;
+  color: white;
+}
+
+.timer-modes button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.timer-circle {
+  width: 250px;
+  height: 250px;
+  margin: 32px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid #dbeafe;
+  border-radius: 50%;
+  background: #f8fbff;
+}
+
+.timer-circle span {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1d4ed8;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer-circle small {
+  margin-top: 8px;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.timer-controls button {
+  min-width: 120px;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2573eb;
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.timer-controls .reset-button {
+  background: #eaf1fc;
+  color: #1d4ed8;
+}
+
+.timer-controls button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.session-info {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+}
+
+.timer-error {
+  color: #b91c1c;
+  margin: 12px 0;
+}
+
+.timer-status {
+  padding: 30px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .timer-card {
+    padding: 22px 14px;
+  }
+
+  .timer-circle {
+    width: 210px;
+    height: 210px;
+  }
+
+  .timer-circle span {
+    font-size: 40px;
+  }
+
+  .timer-controls {
+    gap: 8px;
+  }
+
+  .timer-controls button {
+    min-width: 0;
+    flex: 1;
+    padding: 12px 10px;
+  }
+}

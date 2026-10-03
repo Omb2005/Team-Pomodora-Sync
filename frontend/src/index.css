@@ -1,0 +1,198 @@
+/* ========================================================
+   TEAM POMODORO SYNC - DESIGN SYSTEM & GLOBAL STYLES
+   ======================================================== */
+
+:root {
+  --primary: #dc3545;
+  --primary-hover: #bb2d3b;
+  --primary-subtle: #f8d7da;
+  --primary-glow: rgba(220, 53, 69, 0.35);
+  --dark: #212529;
+  --light-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-main: #2b2f38;
+  --text-muted: #6c757d;
+  --border-color: #e9ecef;
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+  background-color: var(--light-bg);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* ================= NAVBAR ================= */
+.app-navbar {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-brand {
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.nav-link {
+  font-weight: 500;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+  transition: all 0.15s ease-in-out;
+}
+
+.nav-link:hover, .nav-link.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* ================= TIMER CIRCLE ================= */
+.timer-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #dc3545, #b02a37);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 10px 35px var(--primary-glow);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.timer-circle.running {
+  animation: pulseTimer 2s infinite ease-in-out;
+  box-shadow: 0 12px 45px rgba(220, 53, 69, 0.55);
+}
+
+@keyframes pulseTimer {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 20px rgba(220, 53, 69, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+.timer-circle.break-mode {
+  background: linear-gradient(135deg, #198754, #146c43);
+  box-shadow: 0 10px 35px rgba(25, 135, 84, 0.35);
+}
+
+.timer-circle.break-mode.running {
+  animation: pulseTimerGreen 2s infinite ease-in-out;
+}
+
+@keyframes pulseTimerGreen {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 0 0 20px rgba(25, 135, 84, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(25, 135, 84, 0);
+  }
+}
+
+.timer-display {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+  font-feature-settings: "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.04em;
+  margin: 6px 0;
+}
+
+/* ================= MEMBER AVATAR ================= */
+.member-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/* ================= CARDS & INTERACTION ================= */
+.card {
+  border-radius: 12px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ================= HERO SECTION ================= */
+.hero-section {
+  padding: 80px 0 60px 0;
+  background: radial-gradient(circle at 50% 20%, rgba(220, 53, 69, 0.07) 0%, rgba(248, 249, 250, 0) 70%);
+}
+
+/* ================= CALENDAR ================= */
+.calendar-day-cell {
+  min-height: 95px;
+  transition: background-color 0.15s ease;
+}
+
+.calendar-day-cell:hover {
+  background-color: #f1f3f5;
+}
+
+.calendar-event-pill {
+  font-size: 0.72rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ================= FOOTER ================= */
+.app-footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
